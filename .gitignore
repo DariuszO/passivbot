@@ -175,9 +175,6 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# PyCharm
-.idea/*
-
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
@@ -338,17 +335,18 @@ $RECYCLE.BIN/
 *.lnk
 
 # Backtest files
-backtests/
-!config/optimize/default.hjson
-!config/backtest/default.hjson
-config/
-historical_data/
+!/backtest_configs/xmr.hjson
+/backtest_configs/*
+/plots/
+/backtest_results/
+
+# Run files
+/historical_data/
 
 # Config files
-api-keys.json
-!live_configs/binance_default.json
-!live_configs/bybit_default.json
-live_configs/*
-
-# Reports
-reports/*
+!/api_key_secrets/binance/example_user.json
+!/api_key_secrets/bybit/example_user.json
+/api_key_secrets/*
+!/live_settings/binance/default.json
+!/live_settings/bybit/default.json
+/live_settings/*
